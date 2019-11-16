@@ -1,0 +1,75 @@
+table{
+  margin: auto;
+  border-collapse: collapse;
+  font-size: 18px;
+}
+
+
+td{
+  border: 3px solid gray;
+  border-collapse: separate;
+  padding: 20px;
+}
+
+body {
+	font-family:  Tahoma;
+}
+
+header {
+	display: block;
+	background: black;
+	color: white;
+	font-weight: bold; 
+	padding: 20px;
+	text-align: right;
+}
+
+section {
+	text-align: center;
+}
+
+h1 {
+	font-size: 48px;
+}
+
+section#task {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	color: blue;
+	justify-content: center;
+	max-width: 500px;
+	margin: auto;
+	grid-template-areas: 
+	"header header"
+	"content content";
+	align-items: center;
+}
+
+#form1 {
+	/*grid-column: 0 2;*/
+	grid-area: header;
+}
+
+div {
+	padding: 15px;
+	justify-self: center;
+}
+
+#submitButton, #stop {
+	cursor: pointer;
+	font-weight: bold;
+}
+
+#submitButton:hover, #stop:hover {
+	background-color: black;
+	color:white;
+}
+
+input {
+	border: 1px solid gray;
+	border-radius: 15px;
+	padding: 10px;
+	font-family: Tahoma;
+	font-size: 14px;
+}
+
