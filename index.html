@@ -13,17 +13,23 @@
     <main>
     <section>
       <h1>Welcome!</h1>
-      <p>Your solution is under line. I hope you did your task correctly</p><hr><br>
+      <p>Your sheet above the line. Have fun!</p><hr><br>
     </section>
 
-    <section id="task">
       <form id="form1" onsubmit="add(); return false">
+        <input type="text" id="measureUnit" name="unit" placeholder="Един.">
         <input type="text" name="product" id="productName" placeholder="Название">
-        <input type="number" name="num" style="width: 60px" placeholder="Число">
+        <input type="number" name="num" style="width: 100px" placeholder="Число" required="">
+        <br>
         <input type="submit" name="sub" id="submitButton" value="Submit">
-        <input type="button" name="thebutton" id="stop" value="Stop" onclick="computeTheSum(); return false;">
+        <input type="button" name="Stop" id="stop" value="Summ" onclick="computeTheSum(); return false;">
+        <input type="button" name="Delete" id="delete" value="Clear" onclick="clearAll(); return false;">
       </form> 
+    <section id="task">
+
     </section>
+
+    <section id="taskSumm"><br></section>
 
     </main>
   

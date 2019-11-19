@@ -1,10 +1,10 @@
-unit = prompt("Единица измерений", "Грн");
-
-let count = 0;
+let unit = "", count = 0, arrOfNumbers = [], buttonId = 0;
 
 function add() {
 
 	let element, number;
+
+	unit = measureUnit.value; 
 
 	element = document.querySelector('#productName').value;
 	number = document.querySelector('[name="num"]').value;
@@ -12,78 +12,55 @@ function add() {
 	let divElement, divNumber;
 
 	divElement = document.createElement('div');
+	divElement.className += "describer";
 	divElement.innerText = element;
-	// p.innerText = element + ": " + number + " " + unit;
 	task.append( divElement);
 
 	divNumber = document.createElement('div')
 	divNumber.innerText = number + " " + unit;
 	task.append( divNumber);
 	
-	count += +number;
 	
+	count += +number;
+	arrOfNumbers.push(number);
+
+
+
+	let button = document.createElement('button');
+	button.type = "button";
+	button.id = "button" + arrOfNumbers.length;
+	button.innerText = "Delete Item";
+
+	button.onclick = function () {
+		button.previousElementSibling.remove();
+		button.previousElementSibling.remove();
+		button.remove();
+
+		count -= arrOfNumbers[+button.id.slice(6) - 1];
+		arrOfNumbers[+button.id.slice(6) - 1] = 0;
+	}
+
+	task.append(button);
+
 }
 
 function computeTheSum() {
-	task.append( document.createElement('br') );	
+	taskSumm.lastElementChild.remove();
 
 	let sumIs = document.createElement('div');
 	sumIs.innerText = "Сумма: " + count + " " + unit;
 	sumIs.style.borderTop = "1px solid black";
-	task.append( sumIs );
+	sumIs.id = "sumId";
+	taskSumm.append( sumIs );
 }
 
+function clearAll () {
+	taskSumm.lastElementChild.remove();
+	taskSumm.append( document.createElement('br') );
 
+	for(let i = 0; i < arrOfNumbers.length*3; i++) {
+		task.lastElementChild.remove();
+	}
 
-
-
-
-
-
-
-
-
-
-// formValue.append( innerText = form1. );
-
-// arrOfElements.push(  );
-
-
-
-
-
-
-
-
-// function mySheet() {
-
-// 	let elements = [], str, unit = prompt("What is the unit?", "Грн");
-
-// 	while (true) {
-// 		let str = prompt("Enter your string", "");
-// 		if ( str === null ) break;
-// 		elements.push( str.split(",") );
-// 	}
-
-// 	let p = [];
-	
-// 	for (let i = 0; i < elements.length; i++) {
-// 		p.push( document.createElement('p') );
-// 		p[i].innerText = elements[i] + " " +unit;
-// 		task.append( p[i] );
-// 	}
-
-// 	let sum = 0;
-	
-// 	for (let i = 0; i < elements.length; i++) {
-// 		sum += +elements[i][1];
-// 	}
-	
-// 	task.append( document.createElement('hr') );
-
-// 	let sumIs = document.createElement('p');
-// 	sumIs.innerText = "Сумма: " + sum + " " + unit;
-// 	task.append( sumIs );
-// } 
-
-// mySheet();
+	return arrOfNumbers.length = 0, count = 0, buttonId = 0;
+}
