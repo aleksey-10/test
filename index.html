@@ -7,7 +7,7 @@
   </head>
   <body>
     <header>
-      Oleksii Tyshchenko
+      App
     </header>
 
     <main>
@@ -17,14 +17,15 @@
     </section>
 
       <form id="form1" onsubmit="add(); return false">
-        <input type="text" id="measureUnit" name="unit" placeholder="Един.">
         <input type="text" name="product" id="productName" placeholder="Название">
         <input type="number" name="num" style="width: 100px" placeholder="Число" required="">
+        <input type="text" id="measureUnit" name="unit" placeholder="Един.">
         <br>
         <input type="submit" name="sub" id="submitButton" value="Submit">
         <input type="button" name="Stop" id="stop" value="Summ" onclick="computeTheSum(); return false;">
         <input type="button" name="Delete" id="delete" value="Clear" onclick="clearAll(); return false;">
       </form> 
+      
     <section id="task">
 
     </section>
@@ -32,6 +33,8 @@
     <section id="taskSumm"><br></section>
 
     </main>
+
+    <!-- <footer>Oleksii Tyshchenko</footer> -->
   
     <script type="text/javascript" src="task.js">
 

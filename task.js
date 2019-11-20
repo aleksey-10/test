@@ -4,7 +4,8 @@ function add() {
 
 	let element, number;
 
-	unit = measureUnit.value; 
+	unit = measureUnit.value;
+	measureUnit.disabled = true;
 
 	element = document.querySelector('#productName').value;
 	number = document.querySelector('[name="num"]').value;
@@ -12,7 +13,7 @@ function add() {
 	let divElement, divNumber;
 
 	divElement = document.createElement('div');
-	divElement.className += "describer";
+	// divElement.className += "describer";
 	divElement.innerText = element;
 	task.append( divElement);
 
@@ -37,11 +38,14 @@ function add() {
 		button.remove();
 
 		count -= arrOfNumbers[+button.id.slice(6) - 1];
-		arrOfNumbers[+button.id.slice(6) - 1] = 0;
+		arrOfNumbers[+button.id.slice(6) - 1] = null;
 	}
 
 	task.append(button);
 
+
+	document.querySelector('#productName').value = "";
+	document.querySelector('[name="num"]').value = "";
 }
 
 function computeTheSum() {
@@ -58,9 +62,15 @@ function clearAll () {
 	taskSumm.lastElementChild.remove();
 	taskSumm.append( document.createElement('br') );
 
-	for(let i = 0; i < arrOfNumbers.length*3; i++) {
-		task.lastElementChild.remove();
+	for(let i = 0; i < arrOfNumbers.length; i++) {
+		if (arrOfNumbers[i] != null)  {
+			for(let j = 0; j < 3; j++)
+				task.lastElementChild.remove();
+		}
 	}
+
+	measureUnit.value = "";
+	measureUnit.disabled = false;
 
 	return arrOfNumbers.length = 0, count = 0, buttonId = 0;
 }

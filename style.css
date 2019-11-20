@@ -1,34 +1,25 @@
-table{
-  margin: auto;
-  border-collapse: collapse;
-  font-size: 18px;
-}
-
-
-td{
-  border: 3px solid gray;
-  border-collapse: separate;
-  padding: 20px;
-}
-
 body {
 	font-family:  Tahoma;
-
+	min-height: 100vh;
 }
 
 
-header {
+header, footer {
 	display: block;
 	background: black;
 	color: white;
 	font-weight: bold; 
-	padding: 20px;
 	text-align: right;
+	padding: 25px;
+}
+
+footer {
+	
+	bottom: 0;
 }
 
 section {
 	text-align: center;
-
 }
 
 h1 {
@@ -83,12 +74,14 @@ input, button {
 	font-weight: bold;
 }
 
-#submitButton:hover, #stop:hover, {
+#submitButton:hover, #stop:hover {
 	background-color: black;
-	color:white;
+	color: white;
 }
 
-button { justify-self: end; }
+button { 
+	justify-self: end;
+}
 
 button:hover, #delete:hover {
 	background-color: lightcoral;
@@ -99,6 +92,6 @@ button:hover, #delete:hover {
 	width: 50px;
 }
 
-.describer{
+/*.describer{
 	justify-self: start;
-}
+}*/
