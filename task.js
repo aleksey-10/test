@@ -39,6 +39,8 @@ function add() {
 
 		count -= arrOfNumbers[+button.id.slice(6) - 1];
 		arrOfNumbers[+button.id.slice(6) - 1] = null;
+
+		computeTheSum();
 	}
 
 	task.append(button);
