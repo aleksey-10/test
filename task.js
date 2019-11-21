@@ -48,6 +48,7 @@ function add() {
 
 	document.querySelector('#productName').value = "";
 	document.querySelector('[name="num"]').value = "";
+	document.querySelector('#productName').focus();
 }
 
 function computeTheSum() {
