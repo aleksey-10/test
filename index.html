@@ -7,21 +7,22 @@
   </head>
   <body>
     <header>
-      Oleksii Tyshchenko
+      App
     </header>
 
     <main>
     <section>
       <h1>Welcome!</h1>
-      <p>Your sheet above the line. Have fun!</p><hr><br>
+      <p>Your list is under the line. Have fun!</p><hr><br>
     </section>
 
       <form id="form1" onsubmit="add(); computeTheSum(); return false">
         <input type="text" name="product" id="productName" placeholder="Название" autofocus>
-        <input type="number" name="num" style="width: 100px" placeholder="Число" required>
+        <input type="number" name="num" style="width: 100px" placeholder="Число" required="">
         <input type="text" id="measureUnit" name="unit" placeholder="Един.">
         <br>
         <input type="submit" name="sub" id="submitButton" value="Submit">
+        <!-- <input type="button" name="Stop" id="stop" value="Summ" onclick="computeTheSum(); return false;"> -->
         <input type="button" name="Delete" id="delete" value="Clear" onclick="clearAll(); return false;">
       </form> 
       
