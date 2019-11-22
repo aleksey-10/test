@@ -1,19 +1,21 @@
-let unit = "", count = 0, arrOfNumbers = [], buttonId = 0;
+let unit = "", count = 0, arrOfNumbers = [], buttonId = 0;	// Measurement unit, current sum, array value of sring "Number", button ID
+
+
+// Item adding function
 
 function add() {
-
-	let element, number;
 
 	unit = measureUnit.value;
 	measureUnit.disabled = true;
 
-	element = document.querySelector('#productName').value;
-	number = document.querySelector('[name="num"]').value;
+	// HTML element of "Name" and "Number" creating
+
+	let element = document.querySelector('#productName').value;
+	let number = document.querySelector('[name="num"]').value;
 	
 	let divElement, divNumber;
 
 	divElement = document.createElement('div');
-	// divElement.className += "describer";
 	divElement.innerText = element;
 	task.append( divElement);
 
@@ -26,6 +28,7 @@ function add() {
 	arrOfNumbers.push(number);
 
 
+	// Delete item button creating
 
 	let button = document.createElement('button');
 	button.type = "button";
@@ -51,6 +54,9 @@ function add() {
 	document.querySelector('#productName').focus();
 }
 
+
+// Sum computing function
+
 function computeTheSum() {
 	taskSumm.lastElementChild.remove();
 
@@ -60,6 +66,9 @@ function computeTheSum() {
 	sumIs.id = "sumId";
 	taskSumm.append( sumIs );
 }
+
+
+// Function of clearing all items and sum computing string 
 
 function clearAll () {
 	taskSumm.lastElementChild.remove();
