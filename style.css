@@ -14,7 +14,7 @@ header, footer {
 }
 
 footer {
-	
+	position: absolute;
 	bottom: 0;
 }
 
@@ -41,7 +41,6 @@ h1 {
 }
 
 #form1 {
-	/*grid-column: 0 2;*/
 	text-align: center;
 	grid-area: header;
 	margin-bottom: 25px;
