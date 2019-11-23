@@ -60,7 +60,7 @@ function computeTheSum() {
 
 	let sumIs = document.createElement('div');
 	sumIs.innerText = "Сумма: " + count + " " + unit;
-	sumIs.style.borderTop = "1px solid black";
+	sumIs.style.borderTop = "1px solid lightgray";
 	sumIs.id = "sumId";
 	taskSumm.append( sumIs );
 }
