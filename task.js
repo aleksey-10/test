@@ -1,4 +1,6 @@
-let unit = "", count = 0, arr = [];	// Measurement unit, current sum, array value of sring "Number", button ID
+let unit = "", count = 0, arr = []; // Measurement unit, current sum, array value of sring "Number", button ID
+
+const stringElements = 4;	
 
 
 // Item adding function
@@ -8,8 +10,26 @@ function add() {
 	unit = measureUnit.value;
 	measureUnit.disabled = true;
 
-	// "Name" and "Number" HTML elements creating
+	// String creating 
 
+	let box = document.createElement('div');
+	box.className = 'box';
+	task.append(box);
+
+	// Checkbox creating
+
+	let check = document.createElement('input');
+	check.type = "checkbox";
+	check.className = "checkboxes";
+
+	check.onclick = function () {
+		(check.checked) ?	box.style.background = 'lightgreen' : box.style.background = ''; 
+	}
+
+	box.append(check);
+
+	// "Name" and "Number" HTML elements creating
+	
 	let element = document.querySelector('#productName').value;
 	let number = document.querySelector('[name="num"]').value;
 	
@@ -17,11 +37,13 @@ function add() {
 
 	divElement = document.createElement('div');
 	divElement.innerText = element;
-	task.append( divElement);
+	divElement.className = 'text';
+	box.append( divElement);
 
 	divNumber = document.createElement('div')
 	divNumber.innerText = number + " " + unit;
-	task.append( divNumber);
+	divNumber.className = 'number';
+	box.append( divNumber);
 	
 	
 	count += +number;
@@ -31,25 +53,25 @@ function add() {
 
 	let deleteButton = document.createElement('button');
 	deleteButton.type = "button";
+	deleteButton.className = 'delete-button';
 	deleteButton.id = "button" + arr.length;
 	deleteButton.innerText = "Delete";
 
 	deleteButton.onclick = function () {
-		deleteButton.previousElementSibling.remove();
-		deleteButton.previousElementSibling.remove();
-		deleteButton.remove();
+		task.lastElementChild.remove()
 
-		count -= arr[+deleteButton.id.slice(6) - 1].number;
-		arr[+deleteButton.id.slice(6) - 1] = null;
+		count -= arr[+arr.length - 1].number;
+		arr[+arr.length - 1] = null;
 
 		computeTheSum();
 	}
 
-	task.append(deleteButton);
+	box.append(deleteButton);
 
 	document.querySelector('#productName').value = "";
 	document.querySelector('[name="num"]').value = "";
 	document.querySelector('#productName').focus();
+
 }
 
 
@@ -74,8 +96,7 @@ function clearAll () {
 
 	for(let i = 0; i < arr.length; i++) {
 		if (arr[i] != null)  {
-			for(let j = 0; j < 3; j++)
-				task.lastElementChild.remove();
+			task.lastElementChild.remove()
 		}
 	}
 
