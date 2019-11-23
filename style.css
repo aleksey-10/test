@@ -1,34 +1,56 @@
 body {
 	font-family:  Tahoma;
-	min-height: 100vh;
+	/*background: #fafafa;*/
 }
 
-
-header, footer {
+header {
 	display: block;
-	background: black;
-	color: white;
+	background: #f2f2f2;
+	color: black;
 	font-weight: bold; 
 	text-align: right;
-	padding: 25px;
+	padding: 15px;
+	font-size: 30px;
+	border-radius: 10px;
+	margin: auto;
 }
 
-footer {
-	position: absolute;
-	bottom: 0;
+.welcome {
+	display: block;
+	text-align: center;
+	border-bottom: 1px solid lightgray;
+	padding: 0px;
+	margin: 10px;
+}
+
+.back {
+	background: #f2f2f2;
+	max-width: 800px;
+	margin: auto;
+	margin-top: 10px;
+	border-radius: 10px;
+
+	justify-self: center;
+	font-size: 28px;
+	font-family: 'Andale Mono', monospace;
+}
+
+h1 {
+	font-size: 48px;
+	margin: auto;
+}
+
+div {
+	padding: 15px;
 }
 
 section {
 	text-align: center;
 }
 
-h1 {
-	font-size: 48px;
-}
-
 #task, #taskSumm {
 	display: grid;
-	grid-template-columns: 1.5fr 1fr 0.75fr;
+	grid-template-columns: 1fr 1fr 0.75fr;
 	/*color: blue;*/
 	justify-content: center;
 	max-width: 750px;
@@ -40,60 +62,55 @@ h1 {
 	align-items: center;
 }
 
+#task{
+	border-top: 1px solid lightgray;
+}
+
 #form1 {
 	text-align: center;
 	grid-area: header;
 	margin-bottom: 25px;
+
 }
 
 #sumId {
 	grid-area: sum;
 }
 
-div {
-	padding: 15px;
-	justify-self: center;
-	font-size: 28px;
-}
 
 input, button {
 	border: 1px solid gray;
 	margin: 10px;
-	border-radius: 10px;
 	padding: 15px;
 	font-family: Tahoma;
 	font-size: 20px;
 }
 
 #submitButton, #stop, #delete, button {
+	
+	color: black;
 	width: 150px;
-	border-radius: 15px;
+	border-radius: 25px;
 	padding: 10px;
 	cursor: pointer;
 	font-weight: bold;
 }
 
-#submitButton:hover, #stop:hover {
+#submitButton:hover {
 	background-color: black;
-	color: white;
-	transition: all 0.5s;
-}
-
-#delete:hover {
-	background-color: lightcoral;
 	color: white;
 	transition: all 0.5s;
 }
 
 button { 
 	justify-self: end;
-	opacity: 0;
+	/*opacity: 0;*/
 }
 
 button:hover, #delete:hover {
 	background-color: lightcoral;
 	color: white;
-	opacity: 1;
+	transition: all 0.5s;
 }
 
 #measureUnit {
