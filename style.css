@@ -36,7 +36,7 @@ h1 {
 	grid-template-areas: 
 	"header header header"
 	"content content content"
-	". summ .";
+	". sum .";
 	align-items: center;
 }
 
@@ -47,7 +47,7 @@ h1 {
 }
 
 #sumId {
-	grid-area: summ;
+	grid-area: sum;
 }
 
 div {
@@ -76,15 +76,24 @@ input, button {
 #submitButton:hover, #stop:hover {
 	background-color: black;
 	color: white;
+	transition: all 0.5s;
+}
+
+#delete:hover {
+	background-color: lightcoral;
+	color: white;
+	transition: all 0.5s;
 }
 
 button { 
 	justify-self: end;
+	opacity: 0;
 }
 
 button:hover, #delete:hover {
 	background-color: lightcoral;
 	color: white;
+	opacity: 1;
 }
 
 #measureUnit {
