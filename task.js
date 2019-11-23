@@ -1,4 +1,4 @@
-let unit = "", count = 0, arrOfNumbers = [], buttonId = 0;	// Measurement unit, current sum, array value of sring "Number", button ID
+let unit = "", count = 0, arr = [];	// Measurement unit, current sum, array value of sring "Number", button ID
 
 
 // Item adding function
@@ -8,7 +8,7 @@ function add() {
 	unit = measureUnit.value;
 	measureUnit.disabled = true;
 
-	// HTML element of "Name" and "Number" creating
+	// "Name" and "Number" HTML elements creating
 
 	let element = document.querySelector('#productName').value;
 	let number = document.querySelector('[name="num"]').value;
@@ -25,29 +25,27 @@ function add() {
 	
 	
 	count += +number;
-	arrOfNumbers.push(number);
-
+	arr.push({element, number});
 
 	// Delete item button creating
 
-	let button = document.createElement('button');
-	button.type = "button";
-	button.id = "button" + arrOfNumbers.length;
-	button.innerText = "Delete Item";
+	let deleteButton = document.createElement('button');
+	deleteButton.type = "button";
+	deleteButton.id = "button" + arr.length;
+	deleteButton.innerText = "Delete";
 
-	button.onclick = function () {
-		button.previousElementSibling.remove();
-		button.previousElementSibling.remove();
-		button.remove();
+	deleteButton.onclick = function () {
+		deleteButton.previousElementSibling.remove();
+		deleteButton.previousElementSibling.remove();
+		deleteButton.remove();
 
-		count -= arrOfNumbers[+button.id.slice(6) - 1];
-		arrOfNumbers[+button.id.slice(6) - 1] = null;
+		count -= arr[+deleteButton.id.slice(6) - 1].number;
+		arr[+deleteButton.id.slice(6) - 1] = null;
 
 		computeTheSum();
 	}
 
-	task.append(button);
-
+	task.append(deleteButton);
 
 	document.querySelector('#productName').value = "";
 	document.querySelector('[name="num"]').value = "";
@@ -74,8 +72,8 @@ function clearAll () {
 	taskSumm.lastElementChild.remove();
 	taskSumm.append( document.createElement('br') );
 
-	for(let i = 0; i < arrOfNumbers.length; i++) {
-		if (arrOfNumbers[i] != null)  {
+	for(let i = 0; i < arr.length; i++) {
+		if (arr[i] != null)  {
 			for(let j = 0; j < 3; j++)
 				task.lastElementChild.remove();
 		}
@@ -84,5 +82,5 @@ function clearAll () {
 	measureUnit.value = "";
 	measureUnit.disabled = false;
 
-	return arrOfNumbers.length = 0, count = 0, buttonId = 0;
+	return arr.length = 0, count = 0;
 }
