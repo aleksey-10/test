@@ -58,11 +58,10 @@ function add() {
 	deleteButton.innerText = "Delete";
 
 	deleteButton.onclick = function () {
-		task.lastElementChild.remove()
+		count -= arr[ +deleteButton.id.slice(6) - 1 ];
+		arr[+deleteButton.id.slice(6) - 1] = null;
 
-		count -= arr[+arr.length - 1].number;
-		arr[+arr.length - 1] = null;
-
+		deleteButton.parentElement.remove()
 		computeTheSum();
 	}
 
