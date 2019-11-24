@@ -48,7 +48,7 @@ section {
 	text-align: center;
 }
 
-#taskSumm {
+#taskSum {
 	display: block;
 	max-width: 650px;
 	margin: auto;
@@ -61,6 +61,12 @@ section {
 	max-width: 650px;
 	border-top: 1px solid lightgray;
 
+}
+
+#boxSum {
+	display: flex;
+	justify-content: space-between;
+	border-top: 1px solid lightgray;
 }
 
 #form1 {
@@ -146,4 +152,8 @@ button:hover, #delete:hover {
 
 .checkboxes, .text, .number, .delete-button {
 	margin: auto;
+}
+
+.underlined {
+	border-radius: 10px;
 }
