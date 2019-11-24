@@ -1,4 +1,4 @@
-let unit = "", count = 0, arr = []; // Measurement unit, current sum, array value of sring "Number", button ID
+let unit = "", count = 0, countU = 0, arr = []; // Measurement unit, current sum, array value of sring "Number", button ID
 
 const stringElements = 4;	
 
@@ -21,11 +21,7 @@ function add() {
 	let check = document.createElement('input');
 	check.type = "checkbox";
 	check.className = "checkboxes";
-
-	check.onclick = function () {
-		(check.checked) ?	box.style.background = 'lightgreen' : box.style.background = ''; 
-	}
-
+	check.id = 'check' + (arr.length + 1);
 	box.append(check);
 
 	// "Name" and "Number" HTML elements creating
@@ -47,7 +43,7 @@ function add() {
 	
 	
 	count += +number;
-	arr.push({element, number});
+	arr.push(number);
 
 	// Delete item button creating
 
@@ -59,6 +55,7 @@ function add() {
 
 	deleteButton.onclick = function () {
 		count -= arr[ +deleteButton.id.slice(6) - 1 ];
+		if (check.checked) countU += -number;
 		arr[+deleteButton.id.slice(6) - 1] = null;
 
 		deleteButton.parentElement.remove()
@@ -66,6 +63,20 @@ function add() {
 	}
 
 	box.append(deleteButton);
+
+	check.onclick = function () {
+		if (check.checked) {
+			box.style.background = 'lightgreen';
+			// boxSum.lastElementChild.style.background = 'lightgreen';
+			countU += +number;
+			computeTheSum();
+		} else {
+			box.style.background = '';
+			countU += -number;
+			// boxSum.lastElementChild.style.background = '';
+			computeTheSum();
+		}
+	}
 
 	document.querySelector('#productName').value = "";
 	document.querySelector('[name="num"]').value = "";
@@ -77,21 +88,27 @@ function add() {
 // Sum computing function
 
 function computeTheSum() {
-	taskSumm.lastElementChild.remove();
+	boxSum.lastElementChild.remove();
+	boxSum.lastElementChild.remove();
 
 	let sumIs = document.createElement('div');
-	sumIs.innerText = "Сумма: " + count + " " + unit;
-	sumIs.style.borderTop = "1px solid lightgray";
-	sumIs.id = "sumId";
-	taskSumm.append( sumIs );
+	sumIs.innerText = "Total: " + count + " " + unit;
+	boxSum.append( sumIs );
+
+	let sumU = document.createElement('div');
+	sumU.innerText = "Underlined: " + countU + " " + unit;
+	sumU.className = "underlined";
+	boxSum.append( sumU );
 }
 
 
 // Function of clearing all items and sum computing string 
 
 function clearAll () {
-	taskSumm.lastElementChild.remove();
-	taskSumm.append( document.createElement('br') );
+	boxSum.lastElementChild.remove();
+	boxSum.lastElementChild.remove();
+	boxSum.append( document.createElement('br') );
+	boxSum.append( document.createElement('br') );
 
 	for(let i = 0; i < arr.length; i++) {
 		if (arr[i] != null)  {
@@ -102,5 +119,5 @@ function clearAll () {
 	measureUnit.value = "";
 	measureUnit.disabled = false;
 
-	return arr.length = 0, count = 0;
+	return arr.length = count = countU = 0;
 }
