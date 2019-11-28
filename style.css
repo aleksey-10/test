@@ -185,11 +185,7 @@ button:hover, #delete:hover {
 	
 	p { font-size: 48px; }
 
-	div, header {
-		font-size: 72px;
-	}
-
-	.back, input, button {
+	div, header, .back, input, button {
 		font-size: 60px;
 	}
 
