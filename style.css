@@ -164,7 +164,6 @@ button:hover, #delete:hover {
 }
 
 
-
 @media (max-device-width: 900px) {
 	
 	#task, #taskSum{
@@ -186,8 +185,12 @@ button:hover, #delete:hover {
 	
 	p { font-size: 48px; }
 
-	div, header, .back, input, button {
+	div, header {
 		font-size: 72px;
+	}
+
+	.back, input, button {
+		font-size: 60px;
 	}
 
 	#productName {
@@ -201,6 +204,8 @@ button:hover, #delete:hover {
 		height: auto;
 		width: auto;
 		font-size: 60px;
+		margin-top: 50px;
+		margin-bottom: 50px;
 	}
 
 	#submitButton, #delete {
