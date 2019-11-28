@@ -25,6 +25,7 @@ header {
 
 .back {
 	background: #f2f2f2;
+
 	max-width: 800px;
 	margin: auto;
 	margin-top: 10px;
@@ -102,7 +103,7 @@ input, button {
 }
 
 button { 
-	justify-self: end;;
+	justify-self: end;
 	/*opacity: 0;*/
 }
 
@@ -110,6 +111,10 @@ button:hover, #delete:hover {
 	background-color: lightcoral;
 	color: white;
 	transition: all 0.5s;
+}
+
+#numberArea {
+	width: 100px;
 }
 
 #measureUnit {
@@ -156,4 +161,53 @@ button:hover, #delete:hover {
 
 .underlined {
 	border-radius: 10px;
+}
+
+
+
+@media (max-device-width: 900px) {
+	
+	#task, #taskSum{
+		max-width: 95%;
+	}
+
+	.back {
+		max-width: 100%;
+	}
+
+	#boxSum {
+		flex-direction: column;
+	}
+
+
+	h1 {
+	font-size: 96px;	
+	}
+	
+	p { font-size: 48px; }
+
+	div, header, .back, input, button {
+		font-size: 72px;
+	}
+
+	#productName {
+		width: 90%;
+	}
+	#numberArea, #measureUnit {
+		width: 40%;
+	}
+
+	#submitButton, #delete, button {
+		height: auto;
+		width: auto;
+		font-size: 60px;
+	}
+
+	#submitButton, #delete {
+		width: 40%;
+	}
+
+	.checkboxes {
+		transform: scale(4);
+	}
 }
