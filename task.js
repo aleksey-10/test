@@ -1,8 +1,5 @@
 let unit = "", count = 0, countU = 0, arr = []; // Measurement unit, current sum, array value of sring "Number", button ID
 
-const stringElements = 4;	
-
-
 // Item adding function
 
 function add() {
@@ -80,8 +77,6 @@ function add() {
 
 	document.querySelector('#productName').value = "";
 	document.querySelector('[name="num"]').value = "";
-	document.querySelector('#productName').focus();
-
 }
 
 
