@@ -64,13 +64,11 @@ function add() {
 	check.onclick = function () {
 		if (check.checked) {
 			box.style.background = 'lightgreen';
-			// boxSum.lastElementChild.style.background = 'lightgreen';
 			countU += +number;
 			computeTheSum();
 		} else {
 			box.style.background = '';
 			countU += -number;
-			// boxSum.lastElementChild.style.background = '';
 			computeTheSum();
 		}
 	}
@@ -94,6 +92,8 @@ function computeTheSum() {
 	sumU.innerText = "Underlined: " + countU + " " + unit;
 	sumU.className = "underlined";
 	boxSum.append( sumU );
+	
+	(countU != 0) ? boxSum.lastElementChild.style.background = 'lightgreen' : boxSum.lastElementChild.style.background = '';
 }
 
 
