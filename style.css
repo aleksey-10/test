@@ -167,4 +167,20 @@ button:hover, #delete:hover {
 	#boxSum {
 		flex-direction: column;
 	}
+
+	#productName {
+		width: 80%;
+	}
+
+	#numberArea, #measureUnit {
+		width: 30%;
+	}
+
+	#submitButton, #delete, button {
+		width: auto;
+	}
+
+	#submitButton, #delete {
+		width: 40%;
+	}
 }
