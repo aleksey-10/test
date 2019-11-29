@@ -150,8 +150,13 @@ button:hover, #delete:hover {
 	width: 20px;
 	margin: 0;
 	margin-right: 10px;
-	justify-content: flex-start;
+	align-self: flex-start;
 	cursor: pointer;
+	opacity: 0;
+}
+
+.delete-button:hover {
+	opacity: 1;
 }
 
 .checkboxes, .text, .number, .delete-button {
@@ -160,11 +165,14 @@ button:hover, #delete:hover {
 
 .underlined {
 	border-radius: 10px;
-
 }
 
 
 @media screen and (max-width: 900px) {
+
+	div {
+		padding: 15px;
+	}
 
 	#boxSum {
 		flex-direction: column;
@@ -176,11 +184,11 @@ button:hover, #delete:hover {
 	}
 
 	#productName {
-		width: 85%;
+		width: 250px;
 	}
 
 	#numberArea, #measureUnit {
-		width: 35%;
+		width: 100px;
 	}
 
 	#submitButton, #delete, button {
@@ -188,10 +196,14 @@ button:hover, #delete:hover {
 	}
 
 	#submitButton, #delete {
-		width: 40%;
+		width: 125px;
 	}
 
 	.checkboxes {
-		transform: scale(1.5);
+		transform: scale(1.3);
+	}
+
+	.delete-button {
+		opacity: 1;
 	}
 }
