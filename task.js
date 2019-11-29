@@ -1,5 +1,8 @@
 let unit = "", count = 0, countU = 0, arr = []; // Measurement unit, current sum, array value of sring "Number", button ID
 
+const stringElements = 4;	
+
+
 // Item adding function
 
 function add() {
@@ -44,11 +47,12 @@ function add() {
 
 	// Delete item button creating
 
-	let deleteButton = document.createElement('button');
-	deleteButton.type = "button";
+	let deleteButton = document.createElement('img');
+	deleteButton.src = "img/x.png";
+	deleteButton.width = '1%';
 	deleteButton.className = 'delete-button';
 	deleteButton.id = "button" + arr.length;
-	deleteButton.innerText = "Delete";
+
 
 	deleteButton.onclick = function () {
 		count -= arr[ +deleteButton.id.slice(6) - 1 ];
@@ -75,8 +79,9 @@ function add() {
 
 	document.querySelector('#productName').value = "";
 	document.querySelector('[name="num"]').value = "";
-}
+	document.querySelector('#productName').focus();
 
+}
 
 // Sum computing function
 
@@ -92,7 +97,7 @@ function computeTheSum() {
 	sumU.innerText = "Underlined: " + countU + " " + unit;
 	sumU.className = "underlined";
 	boxSum.append( sumU );
-	
+
 	(countU != 0) ? boxSum.lastElementChild.style.background = 'lightgreen' : boxSum.lastElementChild.style.background = '';
 }
 
