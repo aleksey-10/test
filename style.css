@@ -31,7 +31,7 @@ header {
 	border-radius: 10px;
 
 	justify-self: center;
-	font-size: 18px;
+	font-size: 20px;
 	font-family: 'Andale Mono', monospace;
 }
 
@@ -188,5 +188,8 @@ button:hover, #delete:hover {
 	#submitButton, #delete {
 		width: 40%;
 	}
-
+	
+	.checkboxes {
+		transform: scale(1.5);
+	}
 }
