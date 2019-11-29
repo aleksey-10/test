@@ -163,52 +163,8 @@ button:hover, #delete:hover {
 	border-radius: 10px;
 }
 
-
-@media (max-device-width: 900px) {
-	
-	#task, #taskSum{
-		max-width: 95%;
-	}
-
-	.back {
-		max-width: 100%;
-	}
-
+@media screen and (max-width: 900px) {
 	#boxSum {
 		flex-direction: column;
-	}
-
-
-	h1 {
-	font-size: 96px;	
-	}
-	
-	p { font-size: 48px; }
-
-	div, header, .back, input, button {
-		font-size: 60px;
-	}
-
-	#productName {
-		width: 90%;
-	}
-	#numberArea, #measureUnit {
-		width: 40%;
-	}
-
-	#submitButton, #delete, button {
-		height: auto;
-		width: auto;
-		font-size: 60px;
-		margin-top: 25px;
-		margin-bottom: 25px;
-	}
-
-	#submitButton, #delete {
-		width: 40%;
-	}
-
-	.checkboxes {
-		transform: scale(4);
 	}
 }
