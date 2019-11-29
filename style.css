@@ -1,17 +1,17 @@
 body {
 	font-family:  Tahoma;
+	/*background: #fafafa;*/
 }
 
 header {
 	display: block;
 	background: #f2f2f2;
-	color: black;
-	font-weight: bold; 
-	text-align: right;
+	color: black; 
+	text-align: left;
 	padding: 15px;
-	font-size: 30px;
 	border-radius: 10px;
 	margin: auto;
+	font-weight: bold;
 }
 
 .welcome {
@@ -20,10 +20,12 @@ header {
 	border-bottom: 1px solid lightgray;
 	padding: 0px;
 	margin: 10px;
+	font-size: 18px;
+	color: gray;
 }
 
 .back {
-	background: #f2f2f2;
+	/*background: #f2f2f2;*/
 
 	max-width: 800px;
 	margin: auto;
@@ -102,7 +104,6 @@ input, button {
 
 button { 
 	justify-self: end;
-	/*opacity: 0;*/
 }
 
 button:hover, #delete:hover {
@@ -188,8 +189,8 @@ button:hover, #delete:hover {
 	#submitButton, #delete {
 		width: 40%;
 	}
-	
+
 	.checkboxes {
-		transform: scale(2);
+		transform: scale(1.5);
 	}
 }
