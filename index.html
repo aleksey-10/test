@@ -13,13 +13,14 @@
 
     <main>
     <div class="welcome">
-      <p>Create your list below</p>
+      <h1>Welcome!</h1>
+      <p>Create your list below.</p>
     </div>
     <div class="back">
       <form id="form1" onsubmit="add(); computeTheSum(); return false">
-        <input type="text" name="product" id="productName" placeholder="Название">
-        <input type="number" name="num" id="numberArea" placeholder="Число" required>
-        <input type="text" id="measureUnit" name="unit" placeholder="Един.">
+        <input type="text" name="product" id="productName" placeholder="Name" autofocus>
+        <input type="number" name="num" id="numberArea" placeholder="Number" required>
+        <input type="text" id="measureUnit" name="unit" placeholder="Unit">
         <br>
         <input type="submit" name="sub" id="submitButton" value="Submit">
         <input type="button" name="Delete" id="delete" value="Clear" onclick="clearAll(); return false;">
