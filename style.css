@@ -1,6 +1,5 @@
 body {
 	font-family:  Tahoma;
-	/*background: #fafafa;*/
 }
 
 header {
@@ -32,12 +31,12 @@ header {
 	border-radius: 10px;
 
 	justify-self: center;
-	font-size: 28px;
+	font-size: 18px;
 	font-family: 'Andale Mono', monospace;
 }
 
 h1 {
-	font-size: 48px;
+	font-size: 36px;
 	margin: auto;
 }
 
@@ -72,7 +71,6 @@ section {
 
 #form1 {
 	text-align: center;
-	grid-area: header;
 	margin-bottom: 25px;
 
 }
@@ -83,7 +81,7 @@ input, button {
 	margin: 10px;
 	padding: 15px;
 	font-family: Tahoma;
-	font-size: 20px;
+	font-size: 18px;
 }
 
 #submitButton, #delete, button {
@@ -161,19 +159,26 @@ button:hover, #delete:hover {
 
 .underlined {
 	border-radius: 10px;
+
 }
+
 
 @media screen and (max-width: 900px) {
 	#boxSum {
 		flex-direction: column;
 	}
 
+	input, button {
+		margin: 5px;
+		padding: 10px;
+	}
+
 	#productName {
-		width: 80%;
+		width: 85%;
 	}
 
 	#numberArea, #measureUnit {
-		width: 30%;
+		width: 35%;
 	}
 
 	#submitButton, #delete, button {
@@ -183,4 +188,5 @@ button:hover, #delete:hover {
 	#submitButton, #delete {
 		width: 40%;
 	}
+
 }
