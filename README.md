@@ -1,4 +1,4 @@
-# test
+# MyList
 
 1. To create the list enter the data than press Submit button.
 2. To delete string click on the red cross.
