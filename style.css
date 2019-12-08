@@ -168,7 +168,7 @@ button:hover, #delete:hover {
 }
 
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 600px) {
 
 	div {
 		padding: 15px;
