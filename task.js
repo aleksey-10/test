@@ -94,7 +94,7 @@ function computeTheSum() {
 	boxSum.append( sumIs );
 
 	let sumU = document.createElement('div');
-	sumU.innerText = "Underlined: " + countU + " " + unit;
+	sumU.innerText = "Selected: " + countU + " " + unit;
 	sumU.className = "underlined";
 	boxSum.append( sumU );
 
