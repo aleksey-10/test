@@ -147,7 +147,7 @@ button:hover, #delete:hover {
 }
 
 .delete-button{
-	width: 20px;
+/* 	width: 20px; */
 	margin: 0;
 	margin-right: 10px;
 	align-self: flex-start;
