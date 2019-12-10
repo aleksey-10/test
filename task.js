@@ -48,7 +48,7 @@ function add() {
 	// Delete item button creating
 
 	let deleteButton = document.createElement('i');
-	deleteButton.className = "far fa-trash-alt";
+	deleteButton.className = "far fa-trash-alt delete-button";
 	deleteButton.id = "button" + arr.length;
 
 
