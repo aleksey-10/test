@@ -47,10 +47,8 @@ function add() {
 
 	// Delete item button creating
 
-	let deleteButton = document.createElement('img');
-	deleteButton.src = "img/x.png";
-	deleteButton.width = '1%';
-	deleteButton.className = 'delete-button';
+	let deleteButton = document.createElement('i');
+	deleteButton.className = "far fa-trash-alt";
 	deleteButton.id = "button" + arr.length;
 
 
