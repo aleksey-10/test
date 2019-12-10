@@ -159,6 +159,12 @@ button:hover, #delete:hover {
 	opacity: 1;
 }
 
+#submitButton, button:hover, #delete:hover  {
+	background-color: "";
+	color: "";
+	transition: all 0.5s;
+}
+
 .checkboxes, .text, .number, .delete-button {
 	margin: auto;
 }
